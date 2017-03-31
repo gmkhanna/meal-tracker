@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
+// import { FormsModule } from '@angular/core'
+import { MealListComponent } from './meal-list.component';
 
-NgModule({
+@NgModule({
   imports: [BrowserModule],
-  declarations: [AppComponent],
+  declarations: [AppComponent,
+                  MealListComponent],
   bootstrap: [AppComponent]
 })
 
