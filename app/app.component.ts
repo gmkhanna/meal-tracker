@@ -7,6 +7,7 @@ import { Meal } from './meal.model'
   <div class="container">
   <h1>Meal Tracker</h1>
   <meal-list [childMealList]="mealList"></meal-list>
+  <new-meal (infoSender)="toAddMeal($event)"></new-meal>
 
   </div>
   `
@@ -22,5 +23,9 @@ export class AppComponent {
   ];
 
   selectedMeal = null;
+
+  toAddMeal(mealInfoFromForm: Meal) {
+    this.mealList.push(mealInfoFromForm);
+  }
 
 }
