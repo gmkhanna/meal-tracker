@@ -8,11 +8,15 @@ import { Meal } from './meal.model';
     <div>
       <h2>Logged Meals for the Day</h2>
 
-      <div class="meal" *ngFor="let currentMeal of childMealList">
-      <h4 class="name">Name: {{currentMeal.name}}</h4>
-      <h4 class="calories">Calories: {{currentMeal.calories}}</h4>
-      <h4 class="details">Details: {{currentMeal.details}}</h4>
-      <button (click)="clickedEditButton(currentMeal)">Edit</button>
+      <div class="meal row">
+        <div class="col-sm-3 list-div" *ngFor="let currentMeal of childMealList">
+          <div class="content">
+            <h5 class="name">Name: {{currentMeal.name}}</h5>
+            <h5 class="calories">Calories: {{currentMeal.calories}}</h5>
+            <h5 class="details">Details: {{currentMeal.details}}</h5>
+            <button (click)="clickedEditButton(currentMeal)">Edit</button>
+        </div>
+      </div>
       </div>
     </div>
   `
