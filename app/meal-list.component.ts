@@ -8,8 +8,15 @@ import { Meal } from './meal.model';
     <div>
       <h2>Logged Meals for the Day</h2>
 
+      <select (change)="onChange($event.target.value)">
+        <option value="all">Complete Log</option>
+        <option value="healthy">Healthy Choices</option>
+        <option value="unhealthy">Unhealthy Choices</option>
+      </select>
+      <br>
+
       <div class="meal row">
-        <div class="col-sm-3 list-div" *ngFor="let currentMeal of childMealList">
+        <div class="col-sm-3 list-div" *ngFor="let currentMeal of childMealList | healthiness:filterByHealth">
           <div class="content">
             <h5 class="name">Name: {{currentMeal.name}}</h5>
             <h5 class="calories">Calories: {{currentMeal.calories}}</h5>
@@ -29,8 +36,14 @@ export class MealListComponent {
   @Input() childMealList: Meal[];
   @Output() editEvent = new EventEmitter();
 
+  filterByHealth: string = "healthy"
+
   clickedEditButton(editingMeal: Meal) {
     this.editEvent.emit(editingMeal);
+  }
+
+  onChange(viewOption) {
+    this.filterByHealth = viewOption;
   }
 
 }
