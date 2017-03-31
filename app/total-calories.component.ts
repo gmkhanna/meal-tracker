@@ -1,26 +1,19 @@
-import { Component } from '@angular/core';
-import { Meal } from './meal.model';
-
-@Component({
-  selector: 'total-calories',
-  template: `
-    <h3></h3>
-  `
-
-})
-
-
-export class TotalCaloriesComponent {
-
-  totalCalories(input: Meal[]) {
-    var total = 0;
-    console.log(input.length);
-     for (var i = 0; i < input.length; i++) {
-       total += input[i].calories;
-     }
-     console.log(total)
-     return total;
-  }
-
-
-}
+// import { Pipe, PipeTransform } from '@angular/core';
+// import { Meal } from './meal.model';
+//
+// @Pipe({
+//   name: 'total-cals',
+//   pure: false
+// })
+//
+//
+// export class TotalCaloriesPipe implements PipeTransform {
+//
+//   transform(input: Meal[]) {
+//     var total = 0;
+//       for (var i = 0; i < input.length; i++) {
+//            total += input[i].calories;
+//          }
+//          return total;
+//       }
+// }

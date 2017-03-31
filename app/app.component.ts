@@ -6,9 +6,12 @@ import { Meal } from './meal.model'
   template: `
   <div class="container">
   <h1>Meal Tracker</h1>
+  <!-- <h3 *ngFor="let calTotal of mealList | total-cals:showTotal">Total Calories Consumed</h3> -->
   <new-meal (infoSender)="toAddMeal($event)"></new-meal>
   <meal-list [childMealList]="mealList" (editEvent)="toEditMeal($event)"></meal-list>
   <edit-meal [childSelectedMeal]="selectedMeal" (hideEditForm)="finishedEditing()"></edit-meal>
+
+<!-- <total-calories [childMealList]="mealList" (totalInfoSender)=showTotal($event)></total-calories> -->
 
   </div>
   `
@@ -32,6 +35,10 @@ export class AppComponent {
   toEditMeal(specMeal) {
     this.selectedMeal = specMeal;
   }
+
+  // showTotal(total) {
+  //   this.
+  // }
 
   finishedEditing() {
     this.selectedMeal = null;
