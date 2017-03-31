@@ -15,22 +15,22 @@ import { Meal } from './meal.model';
       </select>
       <br>
 
+      <!-- <h3>Total Calories Comsumed Today</h3>
+       <button (click)="totalCalories()">View</button> -->
+
       <div class="meal row">
         <div class="col-sm-3 list-div" *ngFor="let currentMeal of childMealList | healthiness:filterByHealth">
           <div class="content">
             <h5 class="name">Name: {{currentMeal.name}}</h5>
             <h5 class="calories">Calories: {{currentMeal.calories}}</h5>
             <h5 class="details">Details: {{currentMeal.details}}</h5>
-            <button (click)="clickedEditButton(currentMeal)">Edit</button>
+            <button type="button" data-toggle="modal" data-target="#edit-modal" (click)="clickedEditButton(currentMeal)">Edit</button>
         </div>
       </div>
       </div>
     </div>
   `
 })
-
-
-
 
 export class MealListComponent {
   @Input() childMealList: Meal[];

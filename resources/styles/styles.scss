@@ -1,15 +1,50 @@
 .list-div {
-  outline: orange 1px solid;
   height: 200px;
   text-align: center;
   margin-top: 2%;
-  margin-left: 2%;
+  margin-left: 5%;
   display: inline-block;
   border-radius: 50%;
   background-color: lightgray;
   box-shadow: 2px 2px 2px black;
 }
 
+body {
+  background-color: #4A281E;
+}
+
 .name {
   margin-top: 17%;
+}
+
+.container {
+  margin-top: 3%;
+  border: black 2px solid;
+  border-radius: 15%;
+  background-color: white;
+
+}
+
+h1 {
+  text-align: center;
+}
+
+.new-meal {
+  text-align: right;
+}
+
+// .add-meal {
+//   float: right;
+// }
+
+.newName {
+  margin-right: 0%;
+}
+
+.newCalories {
+  margin-right: 5%
+}
+
+.newDetails {
+  margin-right: 10%;
 }
