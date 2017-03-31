@@ -6,8 +6,9 @@ import { Meal } from './meal.model'
   template: `
   <div class="container">
   <h1>Meal Tracker</h1>
-  <meal-list [childMealList]="mealList"></meal-list>
+  <meal-list [childMealList]="mealList" (editEvent)="toEditMeal($event)"></meal-list>
   <new-meal (infoSender)="toAddMeal($event)"></new-meal>
+  <edit-meal [childSelectedMeal]="selectedMeal" (hideEditForm)="finishedEditing()"></edit-meal>
 
   </div>
   `
@@ -26,6 +27,14 @@ export class AppComponent {
 
   toAddMeal(mealInfoFromForm: Meal) {
     this.mealList.push(mealInfoFromForm);
+  }
+
+  toEditMeal(specMeal) {
+    this.selectedMeal = specMeal;
+  }
+
+  finishedEditing() {
+    this.selectedMeal = null;
   }
 
 }

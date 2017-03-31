@@ -18,7 +18,9 @@ import { Meal } from './meal.model';
     <label>Details</label>
     <input #newDetails>
   </div>
-  <button class="btn" (click)="submitInfo(newName.value, newCalories.value, newDetails.value); newName.value=''; newCalories.value=''; newDetails.value='';">Log Meal</button>
+  <button class="btn"
+  (click)="submitInfo(newName.value, newCalories.value, newDetails.value); newName.value=''; newCalories.value=''; newDetails.value='';">
+  Log Meal</button>
   `
 })
 
